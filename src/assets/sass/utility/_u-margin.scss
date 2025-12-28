@@ -1,0 +1,20 @@
+@use "../global" as *;
+.u-mis1 {
+    margin-inline-start: -0.9em;
+}
+
+.u-mis2 {
+    margin-inline-start: -0.2em;
+    margin-inline-end: -0.2em;
+}
+
+.u-mis3 {
+    margin-inline-start: -0.6em;
+}
+
+.u-mbs1 {
+    @include mq('sp-down') {
+        display: inline-block;
+      margin-block-start: rm(12);
+    }
+}

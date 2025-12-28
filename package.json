@@ -1,0 +1,32 @@
+{
+  "name": "hinagata",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx gulp",
+    "build": "npx gulp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "autoprefixer": "^10.4.23",
+    "browser-sync": "^3.0.4",
+    "css-declaration-sorter": "^7.3.0",
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-esbuild": "^0.14.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^10.0.0",
+    "gulp-sass": "^6.0.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-webp": "^5.1.0",
+    "postcss-merge-rules": "^7.0.7",
+    "sass": "^1.96.0"
+  }
+}

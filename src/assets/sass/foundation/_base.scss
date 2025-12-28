@@ -1,0 +1,61 @@
+@use '../global' as *;
+
+body {
+    font-family: $font-main;
+    color: $color-bk;
+    background-color: $color-back-ground;
+    line-height: normal;
+  }
+
+  body.is-fixed {
+    height: 100%;
+    overflow: hidden;
+  }
+
+  body.loading .l-header {
+    display: none;
+}
+
+html, body { 
+  height: 100%; 
+}
+
+html {
+  @media screen and (max-width: #{px($pc-inner-sum) - 1px}) and (min-width: #{px($breakpoint)}) {
+    font-size: calc(16 / #{$pc-inner-sum} * 100vw); 
+
+  }
+  @media screen and (max-width: #{px($breakpoint) - 1px}) {
+    font-size: calc(16 / #{$sp_camp} * 100vw);
+    // font-size: min(calc(16 / #{$sp_camp} * 100vw), xxpx);
+    // スマホカンプデカすぎ問題を防ぐ
+  }
+}
+
+
+.l-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.l-main {
+  flex: 1 0 auto; 
+}
+
+/* 共通のフォーカススタイル */
+a:focus, a:focus-visible,
+button:focus, button:focus-visible {
+  transition: transform 0.3s, color 0.3s ease;
+  transform: scale(1.05);
+  color: $color-rd;
+}
+
+
+// @media screen and (min-width: 768px) {
+//   a[href^="tel:"] {
+//     pointer-events: none;       /* クリック無効 */
+//     cursor: default;            /* ポインタは通常カーソル */
+//     text-decoration: none;      /* リンク下線を消す */
+//   }
+// }

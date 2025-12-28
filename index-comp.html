@@ -1,0 +1,159 @@
+<div class="p-contact-form__inner h-adr">
+  <span class="p-country-name u-hidden">Japan</span>
+
+  <div class="p-contact-form__row p-contact-form__row--name js-form-field">
+    <label class="p-contact-form__head" for="your-name">
+      <span class="p-contact-form__head-text">お名前</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[text* your-name id:your-name class:p-contact-form__input placeholder "山田 太郎"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--kana js-form-field">
+    <label class="p-contact-form__head" for="your-kana">
+      <span class="p-contact-form__head-text">ふりがな</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[text* your-kana id:your-kana class:p-contact-form__input placeholder "やまだ たろう"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--mail js-form-field">
+    <label class="p-contact-form__head" for="your-email">
+      <span class="p-contact-form__head-text">メール</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[email* your-email id:your-email class:p-contact-form__input placeholder "example@example.com"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row-tel js-form-field">
+    <label class="p-contact-form__head" for="your-tel">
+      <span class="p-contact-form__head-text">電話番号</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[tel* your-tel id:your-tel class:p-contact-form__input placeholder "090-1234-5678"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--post js-form-field">
+    <label class="p-contact-form__head" for="your-postcode">
+      <span class="p-contact-form__head-text">郵便番号</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[tel* your-postcode id:your-postcode class:p-contact-form__input class:p-postal-code placeholder "123-4567"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--address js-form-field">
+    <label class="p-contact-form__head" for="your-address">
+      <span class="p-contact-form__head-text">住所</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[text* your-address id:your-address class:p-contact-form__input class:p-region class:p-locality class:p-street-address class:p-extended-address placeholder "東京都〇〇区△△ 1-2-3 〇〇ビル1F"]</div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--birth-select js-form-field">
+    <label class="p-contact-form__head">
+      <span class="p-contact-form__head-text">生年月日（セレクト版）</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">
+      <div class="p-contact-form__birth-inputs">
+        <select name="birth-year-s" id="birth-year-s" class="p-contact-form__select" required>
+          <option value="">年</option>
+        </select>
+        <select name="birth-month-s" id="birth-month-s" class="p-contact-form__select" required>
+          <option value="">月</option>
+        </select>
+        <select name="birth-day-s" id="birth-day-s" class="p-contact-form__select" required>
+          <option value="">日</option>
+        </select>
+      </div>
+      <div class="p-contact-form__age-display">年齢：[text* age-from-select id:age-from-select class:p-contact-form__input-age readonly] 歳</div>
+    </div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--birth-date js-form-field">
+    <label class="p-contact-form__head">
+      <span class="p-contact-form__head-text">生年月日（カレンダー版）</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">
+      [date* birth-date-cal id:birth-date-cal class:p-contact-form__input-date]
+      <div class="p-contact-form__age-display">年齢：[text* age-from-date id:age-from-date class:p-contact-form__input-age readonly] 歳</div>
+    </div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--age-select js-form-field">
+    <label class="p-contact-form__head" for="your-age-select">
+      <span class="p-contact-form__head-text">年代選択</span>
+    </label>
+    <div class="p-contact-form__data">
+      <div class="p-contact-form__select-wrap">[select* your-age-select id:your-age-select class:p-contact-form__select "選択してください" "10代" "20代" "30代" "40代" "50代" "60代以上"]</div>
+    </div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row--select js-form-field">
+    <label class="p-contact-form__head" for="occupation">
+      <span class="p-contact-form__head-text">セレクトボックス</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">
+      <div class="p-contact-form__select-wrap">[select* occupation id:occupation class:p-contact-form__select first_as_label "選択してください" "無料相談" "資料請求" "その他"]</div>
+    </div>
+  </div>
+
+  <fieldset class="p-contact-form__row p-contact-form__row--checkbox js-form-field">
+    <legend class="p-contact-form__head">
+      <span class="p-contact-form__head-text">複数選択可能チェックボックス</span>
+    </legend>
+    <div class="p-contact-form__data p-contact-form__data-checkbox">[checkbox interest use_label_element class:p-contact-form__checkbox-input "one" "two" "three"]</div>
+  </fieldset>
+
+  <fieldset class="p-contact-form__row p-contact-form__row--radio js-form-field">
+    <legend class="p-contact-form__head">
+      <span class="p-contact-form__head-text">ラジオボタン</span>
+    </legend>
+    <div class="p-contact-form__data p-contact-form__data-radio">[radio radio use_label_element class:p-contact-form__radio-input default:1 "未選択" "選択肢 1" "選択肢 2" "選択肢 3"]</div>
+  </fieldset>
+
+  <div class="p-contact-form__row p-contact-form__row--file js-form-field">
+    <label class="p-contact-form__head">
+      <span class="p-contact-form__head-text">資料添付</span>
+    </label>
+    <div class="p-contact-form__data">
+      <div class="p-contact-form__file-items">
+        <div class="p-contact-form__file-item">[file your-file-01 filetypes:jpg|jpeg|png|pdf limit:2mb class:p-contact-form__file]</div>
+        <div class="p-contact-form__file-item">[file your-file-02 filetypes:jpg|jpeg|png|pdf limit:2mb class:p-contact-form__file]</div>
+        <div class="p-contact-form__file-item">[file your-file-03 filetypes:jpg|jpeg|png|pdf limit:2mb class:p-contact-form__file]</div>
+      </div>
+      <span class="p-contact-form__note">※各2MB以内（JPG, PNG, PDF）</span>
+    </div>
+  </div>
+
+  <div class="p-contact-form__row p-contact-form__row-reason js-form-field">
+    <label class="p-contact-form__head" for="your-message">
+      <span class="p-contact-form__head-text">お問い合わせ内容</span>
+      <span class="p-contact-form__required">必須</span>
+    </label>
+    <div class="p-contact-form__data">[textarea* your-message id:your-message class:p-contact-form__input]</div>
+  </div>
+
+  <div class="p-contact-form__data p-contact-form__data-privacy-checkbox js-form-field">
+    <label class="p-contact-form__option-label p-contact-form__checkbox">
+      [acceptance agree class:p-contact-form__checkbox-input]
+      <span class="p-contact-form__option-text">利用規約に同意します</span>
+      [/acceptance]
+    </label>
+  </div>
+
+  <div class="p-contact-form__submit">
+    [submit class:p-contact-form__submit-input ""]
+    <div class="p-contact-form__submit-inner">
+      <div class="p-contact-form__submit-text-wrapper">
+        <span class="p-contact-form__submit-text-upper">どうにかして</span>
+        <span class="p-contact-form__submit-text">送信する</span>
+      </div>
+      <span class="p-contact-form__arrow-wrapper">
+        <span class="p-contact-form__arrow">+</span>
+      </span>
+    </div>
+  </div>
+</div>

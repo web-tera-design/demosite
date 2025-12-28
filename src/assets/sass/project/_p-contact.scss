@@ -1,0 +1,667 @@
+@use "../global" as *;
+
+.p-contact-form__wrapper {
+}
+
+.p-contact-form {
+  
+}
+
+.p-contact-form__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+.p-contact-form__name-wrapper {
+    display: flex;
+    flex-direction: column;
+    @include mq(pc-up) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.p-contact-form__row {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-contact-form__row--name {
+    
+}
+
+.p-contact-form__row--checkbox {
+
+}
+
+.p-contact-form__row-reason {
+}
+
+.p-contact-form__head {
+    position: relative;
+    display: inline-block;
+    color: #144272;
+    font-size: rclamp(16, 18, 375, 1440);
+    font-weight: 700;
+    line-height: 150%; /* 24px */
+}
+
+.p-contact-form__required {
+    //  &::after {
+    //     position: absolute;
+    //     content: "*";
+    //     top: 0;
+    //     width: 5px;
+    //     height: 5px;
+    //  }
+}
+
+.p-contact-form__data {
+
+    @include mq(pc-up) {
+    }
+    textarea {
+        width: 100%;
+        min-height: 160px;
+        @include mq(pc-up) {
+          min-height: 150px;
+        }
+    }
+}
+
+.p-contact-form__row--radio {
+}
+
+.p-contact-form__row-tel {
+
+}
+
+.p-contact-form__required {
+
+}
+
+.p-contact-form__row--select {
+
+}
+
+
+
+.p-contact-form__data-radio {
+}
+
+.p-contact-form__row--radio {
+}
+
+.p-contact-form__privacy {
+    height: 227px;
+    border: 1px solid #144272;
+    padding: 12px;
+    overflow-y: scroll;
+    @include mq(pc-up) {
+      height: 126px;
+    }
+}
+
+.p-contact-form__privacy-title {
+    color: #C81E07;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
+
+}
+
+.p-contact-form__privacy-box {
+}
+
+.p-contact-form__privacy-text {
+    color: #8C8C8C;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.p-contact-form__checkbox {
+    color: #0C0C0C;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 150%; /* 21px */
+    transition: all 0.3s ease;
+    // @media (any-hover: hover) {
+    //   &:hover {
+    //     opacity: .6;
+    //   }
+    // }
+}
+
+.p-contact-form__birth-inputs { 
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+.p-contact-form__input-date {
+  
+} 
+.p-contact-form__age-display { 
+
+}
+.p-contact-form__input-age { 
+
+} 
+
+.p-contact-form__file-items { 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+.p-contact-form__file-item { 
+
+}
+
+.p-contact-form__note { 
+
+}
+
+.p-contact-form__head-text {
+
+ }
+.p-contact-form__required { 
+
+}
+
+.p-contact-form__submit-text-upper {
+
+ }
+
+
+
+
+
+// ===============================================
+// ホバー、フォーカス
+// ===============================================
+
+
+/* ===============================================
+ * 入力フィールド（お名前、メール、住所など）
+ * =============================================== */
+.p-contact-form__input,
+.p-contact-form__data textarea {
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: #144272; // 枠をクッキリ
+      background-color: #f9f9f9; // わずかにグレーで「入力できる」感を強調
+    }
+  }
+}
+
+/* ===============================================
+ * 生年月日のセレクトボックス（3つ並び）
+ * =============================================== */
+.p-contact-form__select {
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: #144272;
+      background-color: #f0f7ff; // セレクトは少し青白くすると清潔感が出ます
+    }
+  }
+}
+
+/* ===============================================
+ * 年齢表示（読み取り専用）の微調整
+ * =============================================== */
+.p-contact-form__input-age {
+  cursor: not-allowed; // 「ここは触れないよ」というカーソル
+}
+
+.p-contact-form__select-wrap {
+  @media (any-hover: hover) {
+    &:hover {
+      select {
+        border-color: #144272; // 枠線をクッキリさせる
+        background-color: #f9f9f9; // わずかにグレーにして「押せる」感を出す
+      }
+      &::after {
+        color: #144272; // 矢印（+マーク）の色も連動させると丁寧
+        transform: translateY(-50%) scale(1.1); // 矢印を少し大きくして反応を出す
+      }
+    }
+  }
+}
+
+// ラジオボタン・チェックボックスの共通ホバー
+.p-contact-form__data-radio label,
+.p-contact-form__data-checkbox label,
+.p-contact-form__data-privacy-checkbox label {
+  transition: background-color 0.3s;
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: rgba(20, 66, 114, 0.25); // 領域全体を薄く着色
+    
+    }
+  }
+}
+
+
+
+.p-contact-form__input,
+.p-contact-form__select,
+.p-contact-form__input-date,
+.p-contact-form__data textarea {
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+
+  &:focus {
+    outline: none;
+    border-color: #144272; // メインの紺色
+    background-color: #f0f7ff; // ほんのり青白くして「今ここ」感を出す
+    box-shadow: 0 0 0 3px rgba(20, 66, 114, 0.1); // 外側にふわっとした影
+  }
+}
+ // ファイルアップロードのホバー・フォーカス
+
+.p-contact-form__file {
+  // transitionは「ファイル選択ボタン」自体にも効くように設定
+  transition: border-color 0.3s, background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+
+  // ホバー時：枠線をメインカラーに寄せる
+  @media (any-hover: hover) {
+    &:hover {
+      border-color: #144272;
+      background-color: #f9f9f9;
+    }
+  }
+
+  // フォーカス時：他の入力欄と挙動を合わせる
+  &:focus {
+    outline: none;
+    border-color: #144272;
+    background-color: #f0f7ff;
+    box-shadow: 0 0 0 3px rgba(20, 66, 114, 0.1);
+  }
+
+  // 「ファイルを選択」ボタン（疑似要素）のホバーも制御する場合
+  // ※ブラウザによって挙動が異なりますが、モダンブラウザ共通で効きやすい指定
+  &::-webkit-file-upload-button {
+    transition: background-color 0.3s;
+    cursor: pointer;
+  }
+  
+  @media (any-hover: hover) {
+    &:hover::-webkit-file-upload-button {
+      background-color: #e0e0e0; // ボタン部分を少し暗くして反応を出す
+    }
+  }
+}
+
+//送信ボタン
+.p-contact-form__submit {
+  // 元々のhover処理に加え、アクティブ時の押し込みを追加
+  transition: transform 0.2s;
+
+  &:active {
+    transform: scale(0.96); // 押した瞬間に少し小さくする
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      .p-contact-form__arrow {
+        transform: translateY(-50%) translateX(5px); // 矢印を右にスライド
+      }
+    }
+  }
+}
+
+.p-contact-form__arrow {
+  transition: transform 0.3s ease;
+}
+/*----------------------------------*/
+
+
+// ===============================================
+// 送信ボタン
+// ===============================================
+
+.p-contact-form__submit {
+margin-block-start: 40px;
+margin-inline: auto;
+inline-size: min(200px, 100%);
+position: relative;
+
+  @media (any-hover: hover) {
+      &:hover {
+        .p-contact-form__submit-inner {
+          background: #fff;
+          color: #C81E07;
+      }
+    }
+  }
+}
+
+.p-contact-form__submit input[type="submit"] {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.p-contact-form__submit-inner {
+  padding: 10px 20px;
+  background: #144272;
+  border-radius: 5px;
+  color:#fff;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.p-contact-form__submit-text-wrapper {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 5px;
+}
+
+.p-contact-form__submit-text--upper {
+font-size: 16px;
+font-weight: 500;
+}
+
+.p-contact-form__submit-text {
+font-size: 20px;
+font-weight: 700;
+}
+
+.p-contact-form__arrow-wrapper {
+position: absolute;
+right: 10px;
+top: 50%;
+transform:translateY(-50%);
+display: inline-flex;
+align-items: center;
+justify-content: center;
+background: #c51111;
+}
+
+.p-contact-form__arrow {
+font-size: 20px;
+padding: 0, 5px;
+color: #fff;
+}
+/*----------------------------------*/
+
+
+// ===============================================
+// 入力欄の余白
+// ===============================================
+
+.p-contact-form__input, /* テキスト入力、メール、電話 */
+.p-contact-form__select, /* セレクトボックス */
+.p-contact-form__data textarea /* テキストエリア（専用クラスがあればそれ） */
+{
+    /* 例: 上下に 10px、左右に 15px のパディング */
+    padding: 10px 15px; 
+    /* パディングを幅に含めるのは必須 */
+    box-sizing: border-box; 
+    /* その他ボーダーなど */
+    border: 1px solid #000;
+    width: 100%;
+}
+
+// ===============================================
+// ラジオボタン
+// ===============================================
+/* ラジオボタンのカスタムスタイルブロック内 */
+.p-contact-form__data-radio {
+    .wpcf7-list-item.first {
+        display: none; // 最初の「未選択」オプション全体を非表示にする
+    }
+}
+
+.p-contact-form__data-radio .wpcf7-radio {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(pc-up) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    label {
+      transition: all 0.3s ease;
+      // @media (any-hover: hover) {
+      //   &:hover {
+      //     opacity: .6;
+      //   }
+      // }
+    }
+}
+
+.p-contact-form__data-radio {
+  .wpcf7-list-item-label {
+    display: inline-block;
+    font-size: 16px;
+    line-height: normal;
+    padding-left: 24px;
+    cursor: pointer;
+    position: relative;
+    @include mq(pc-up) {
+      padding-left: 32px;
+    }
+
+    //frame
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: 100vmax;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #0c0c0c;
+      background: #fff;
+    }
+    //active
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100vmax;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: #c51111;
+    }
+  }
+}
+/*----------------------------------*/
+
+// ===============================================
+// チェックボックス
+// ===============================================
+.p-contact-form__data-checkbox .wpcf7-checkbox{
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(pc-up) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    label {
+      transition: all 0.3s ease;
+      // @media (any-hover: hover) {
+      //   &:hover {
+      //     opacity: .6;
+      //   }
+      // }
+    }
+}
+
+.p-contact-form__data-checkbox {
+  .wpcf7-list-item-label {
+    display: inline-block;
+    font-size: 16px;
+    line-height: normal;
+    padding-left: 24px;
+    cursor: pointer;
+    position: relative;
+    @include mq(pc-up) {
+      padding-left: 32px;
+    }
+
+    //frame
+    &::before {
+      content: '';
+      position: absolute;
+      border-radius: 100vmax;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border: 1px solid #0c0c0c;
+      background: #fff;
+    }
+    //active
+    &::after {
+      content: '';
+      position: absolute;
+      top: 7px;
+      left: 4px;
+      width: 10px;
+      height: 10px;
+      border-radius: 100vmax;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      background: #0c0c0c;
+    }
+  }
+}
+//==========================================
+
+// セレクトボックス======================
+.p-contact-form__select-wrap {
+    position: relative;
+    transition: all 0.3s ease;
+
+    select {
+        width: 100%;
+        color: #8C8C8C;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 150%; /* 24px */
+        cursor: pointer;
+        transition: color 0.3s;
+        @media (any-hover: hover) {
+          &:hover {
+            color: #0c0c0c;
+          }
+        }
+    }
+    select:valid {
+      color: #0c0c0c // 選択後の色（通常の文字色）
+    }
+
+    &::after {
+        position: absolute;
+        content: "+";
+        top: 50%;
+        transform:translateY(-50%);
+        right: 0;
+        width: 24px;
+        height: 24px;
+    }
+}
+// =========================================
+
+//プラポリチェックボックス====================
+.p-contact-form__data-privacy-checkbox {
+
+    .wpcf7-list-item-label {
+        display: inline-block;
+        font-size: 14px;
+        line-height: normal;
+        padding-left: 30px;
+        cursor: pointer;
+    
+        position: relative;
+        //frame
+        &::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          width: 20px;
+          height: 20px;
+          border: 1px solid #0c0c0c;
+        }
+        //active
+        &::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 7px;
+          width: 6px;
+          height: 12px;
+          rotate: 45deg;
+          border-right: 1.5px solid #0c0c0c;
+          border-bottom: 1.5px solid #0c0c0c;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+      }
+}
+//=========================================
+
+//元々のwpcf7クラスのリセット
+.wpcf7-list-item {
+  margin: 0;
+  display: block;
+}
+.wpcf7-spinner {
+    display: none !important;
+}
+// ===============================================
+// 1. input の非表示（ラジオとチェックボックスで共通）
+// ===============================================
+
+// ブラウザ標準の見た目を完全に非表示にし、カスタムデザインに切り替える
+input[type=radio],
+input[type=checkbox] {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0); // 領域をクリッピングして非表示
+}
+
+// ===============================================
+// 2. チェックされた時の挙動（ラジオとチェックボックスで共通）
+//    - input の直後の span.p-contact-form__option-text に::afterを表示する
+// ===============================================
+
+// チェックボックス/ラジオボタンがチェックされたら、
+// 直後のカスタムテキストスパンの ::after (チェックマーク/黒丸) を表示
+input[type=radio]:checked + span.wpcf7-list-item-label,
+input[type=checkbox]:checked + span.wpcf7-list-item-label
+{
+  &::after {
+    opacity: 1;
+  }
+}

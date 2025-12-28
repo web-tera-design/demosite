@@ -1,0 +1,15 @@
+@use "../global" as *;
+
+.l-section__inner {
+    inline-size: min(calc(1366px), 100%);
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+
+.l-section__inner--narrow {
+    @include mq('sp-down') {
+        inline-size: 100%;
+        margin-inline: auto;
+    }
+}
+
