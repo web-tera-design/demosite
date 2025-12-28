@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <main class="l-main">
-    ああああああああああああああああ
+    えええええええええええええ
 </main>
 
 <?php get_footer(); ?>
